@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid Musings</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4"><%= article.title %></h1>
+        <div class="text-muted mb-5"><%= article.createdBy %> posted this on <%= article.createdAt.toLocaleDateString() %></div>
+        
+        <a href="/" class="btn btn-secondary mb-5">All Articles</a>
+        <a href="/articles/edit/<%= article.id %>" class="btn btn-info mb-5">Edit</a>
+        <div >        
+            <%- article.sanitisedHtml %>
+        </div>
+    </div>
+</body>
+</html>
